@@ -1,0 +1,24 @@
+version: '2'
+
+services:
+
+  # Database Schema migration
+  schema:
+    image: bandsintown/flyway:4.0.3
+    entrypoint: dockerize -wait tcp://db:3306
+    command: flyway -url=jdbc:mysql://db -schemas=sample -user=root -password=root migrate
+    volumes:
+      - "./db:/flyway/sql"
+    depends_on:
+      - db
+
+  # Database
+  db:
+    image: mysql:5.6.23
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: sample
+      MYSQL_PASSWORD: sample
+      MYSQL_DATABASE: sample
