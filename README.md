@@ -26,7 +26,7 @@ Assuming your DB is a MySQL Database, running a schema migration is simple as th
 
 ```
 docker run -v ${PWD}:/flyway/sql -it --rm bandsintown/flyway:4.0.3 \
- -url=jdbc:mysql://db -schemas=db_schema -user=db_user -password=db_password migrate
+ flyway -url=jdbc:mysql://db -schemas=db_schema -user=db_user -password=db_password migrate
 ```
 
 ## Waiting for the DB
