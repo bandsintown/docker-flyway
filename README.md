@@ -76,7 +76,7 @@ services:
 
 # Build
 
-This project is configured as an [automated build in Dockerhub](https://hub.docker.com/r/bandsintown/alpine/).
+This project is configured as an [automated build in Dockerhub](https://hub.docker.com/r/bandsintown/flyway/).
 
 Each branch give the related image tag.  
 
