@@ -52,7 +52,7 @@ services:
 
   # Database Schema migration
   schema:
-    image: bandsintown/flyway:4.0.3
+    image: bandsintown/flyway:4.0.3-mysql
     entrypoint: dockerize -wait tcp://db:3306
     command: flyway -url=jdbc:mysql://db -schemas=sample -user=root -password=root migrate
     volumes:
